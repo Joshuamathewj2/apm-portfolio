@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. M. Anita Priscilla Mary | Academic Portfolio</title>
+<meta name="description" content="Dr. M. Anita Priscilla Mary – Associate Dean (Science), Head-in-Charge & Assistant Professor, Department of Computer Science, Anna Adarsh College for Women (Autonomous), Chennai. Researcher in Machine Learning, Data Mining, and Energy Prediction." />
+<meta name="keywords" content="Dr Anita Priscilla Mary, Computer Science, Machine Learning, Data Mining, Academic Portfolio, Chennai, Anna Adarsh College, Stella Maris College" />
+<meta property="og:title" content="Dr. M. Anita Priscilla Mary | Academic Portfolio" />
+<meta property="og:description" content="Associate Dean (Science) & Assistant Professor, Computer Science, Chennai. Researcher in ML, Data Mining, Energy Forecasting." />
+<meta name="robots" content="index, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* ── THEME VARIABLES ── */
+[data-theme="light"] {
+  --navy: #1a2744;
+  --navy-mid: #243460;
+  --gold: #b8983c;
+  --gold-light: #d4af55;
+  --cream: #f8f5ef;
+  --cream-2: #f0ebe0;
+  --text-dark: #1a1a2e;
+  --text-mid: #3d3d5c;
+  --text-muted: #7a7a96;
+  --white: #ffffff;
+  --card-bg: #ffffff;
+  --border: #e0dbd0;
+  --accent-bg: #eef1f8;
+  --section-alt: #f8f5ef;
+  --section-main: #ffffff;
+  --shadow: rgba(26,39,68,0.09);
+  --nav-bg: rgba(26,39,68,0.97);
+  --hero-bg: linear-gradient(135deg, #0e1a35 0%, #1a2744 50%, #1e2f55 100%);
+}
+[data-theme="dark"] {
+  --navy: #c8d6f5;
+  --navy-mid: #a8bce8;
+  --gold: #d4af55;
+  --gold-light: #e8c96a;
+  --cream: #0d1117;
+  --cream-2: #161b27;
+  --text-dark: #e8eaf0;
+  --text-mid: #b0b8cc;
+  --text-muted: #7a85a0;
+  --white: #1a2133;
+  --card-bg: #1a2133;
+  --border: #2a3550;
+  --accent-bg: #1e2840;
+  --section-alt: #0d1117;
+  --section-main: #131927;
+  --shadow: rgba(0,0,0,0.35);
+  --nav-bg: rgba(10,15,30,0.98);
+  --hero-bg: linear-gradient(135deg, #060d1e 0%, #0e1a35 50%, #111f40 100%);
+}
+
+/* ── LOADING SCREEN ── */
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0e1a35;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1.5rem;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-monogram {
+  font-family: 'EB Garamond', serif;
+  font-size: 4rem; font-weight: 600;
+  color: var(--gold-light);
+  animation: pulse-mono 1.8s ease-in-out infinite;
+}
+@keyframes pulse-mono {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.95); }
+}
+.loader-bar {
+  width: 160px; height: 2px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px; overflow: hidden;
+}
+.loader-bar-fill {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, #b8983c, #d4af55);
+  border-radius: 2px;
+  animation: load-fill 1.6s ease-out forwards;
+}
+@keyframes load-fill { to { width: 100%; } }
+.loader-text {
+  font-size: 0.7rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+  font-family: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+h1,h2,h3,h4 { font-family: 'EB Garamond', serif; line-height: 1.3; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  height: 64px;
+  border-bottom: 1px solid rgba(184,152,60,0.2);
+  transition: background 0.35s ease;
+}
+.nav-brand {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+.nav-links { display: flex; gap: 1.4rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.65);
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold-light); border-color: var(--gold-light); }
+/* Dark/Light toggle */
+.theme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(184,152,60,0.3);
+  background: rgba(184,152,60,0.08);
+  cursor: pointer; color: rgba(255,255,255,0.7);
+  font-size: 1rem; transition: all 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { background: rgba(184,152,60,0.2); color: var(--gold-light); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; transition: 0.3s; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  background: var(--hero-bg);
+  display: flex; align-items: center; justify-content: center;
+  padding: 100px 3rem 4rem;
+  position: relative; overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(184,152,60,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(100,130,200,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+/* Subtle grid lines */
+#hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.4fr 0.6fr;
+  gap: 4rem; align-items: center;
+  max-width: 1100px; width: 100%; position: relative; z-index: 1;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-light);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+.hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold-light); }
+#hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600; color: white;
+  margin-bottom: 0.75rem;
+  animation: fadeUp 0.8s ease 0.45s both;
+  white-space: nowrap;
+}
+.hero-title-line {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1.75rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+  animation: fadeUp 0.8s ease 0.6s both;
+}
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 0.6rem;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s ease 0.75s both;
+}
+.tag {
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(184,152,60,0.35);
+  border-radius: 100px;
+  font-size: 0.75rem; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s, background 0.2s;
+}
+.tag:hover { border-color: var(--gold-light); background: rgba(184,152,60,0.1); }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.9s both; }
+.btn-primary {
+  padding: 0.8rem 2rem;
+  background: var(--gold);
+  color: #0e1a35; font-weight: 600; font-size: 0.85rem;
+  border-radius: 4px; letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  border: none; cursor: pointer;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(184,152,60,0.3); }
+.btn-outline {
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500;
+  border-radius: 4px; letter-spacing: 0.04em;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold-light); background: rgba(184,152,60,0.08); }
+.btn-cv {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(184,152,60,0.5);
+  background: rgba(184,152,60,0.08);
+  color: var(--gold-light); font-size: 0.85rem; font-weight: 500;
+  border-radius: 4px; letter-spacing: 0.04em;
+  transition: all 0.2s; cursor: pointer;
+}
+.btn-cv:hover { background: rgba(184,152,60,0.18); border-color: var(--gold-light); }
+.hero-avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid rgba(184,152,60,0.35);
+  background: linear-gradient(135deg, #1c2d58, #0f1d3a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 8px rgba(184,152,60,0.06),
+              0 24px 48px rgba(0,0,0,0.4);
+  animation: fadeLeft 0.9s ease 0.5s both;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.hero-avatar::after {
+  content: '';
+  position: absolute; inset: -12px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,152,60,0.15);
+  animation: orbit 8s linear infinite;
+}
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.hero-stats {
+  display: flex; gap: 3rem; margin-top: 3rem;
+  padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+  animation: fadeUp 0.8s ease 1.05s both;
+}
+.hero-stat-num {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.2rem; font-weight: 600; color: var(--gold-light);
+}
+.hero-stat-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes fadeLeft { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+.fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* ── SECTION COMMON ── */
+section { padding: 6rem 3rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1rem;
+}
+.section-label::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.section-heading {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500; color: var(--navy);
+  margin-bottom: 3rem;
+  transition: color 0.35s ease;
+}
+
+/* ── ABOUT ── */
+#about { background: var(--section-main); }
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 5rem; align-items: start; }
+.about-text p { color: var(--text-mid); margin-bottom: 1.25rem; font-size: 1.02rem; line-height: 1.85; transition: color 0.35s; }
+.about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.highlight-card {
+  background: var(--accent-bg);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  transition: background 0.35s, transform 0.2s;
+}
+.highlight-card:hover { transform: translateX(3px); }
+.highlight-card .label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 4px; }
+.highlight-card .value { font-size: 0.92rem; font-weight: 600; color: var(--navy); transition: color 0.35s; }
+.info-block { margin-bottom: 2rem; }
+.info-block h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+.info-item { display: flex; gap: 10px; align-items: baseline; margin-bottom: 0.5rem; font-size: 0.88rem; color: var(--text-mid); transition: color 0.35s; }
+.info-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 8px; }
+
+/* ── EDUCATION ── */
+#education { background: var(--section-alt); }
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.edu-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  transition: box-shadow 0.25s, transform 0.25s, background 0.35s, border-color 0.35s;
+}
+.edu-card:hover { box-shadow: 0 8px 28px var(--shadow); transform: translateY(-3px); }
+.edu-card.highlight { border-top: 3px solid var(--gold); }
+.edu-degree { font-family: 'EB Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; transition: color 0.35s; }
+.edu-institution { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 0.5rem; transition: color 0.35s; }
+.edu-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.75rem; }
+.edu-badge {
+  display: inline-block; padding: 0.25rem 0.75rem;
+  background: var(--accent-bg); color: var(--navy-mid);
+  border-radius: 100px; font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.04em; margin-bottom: 0.5rem;
+  transition: background 0.35s;
+}
+.edu-badge.gold { background: #fdf4e0; color: #7a5b10; }
+[data-theme="dark"] .edu-badge.gold { background: #2a2010; color: #d4af55; }
+
+/* ── EXPERIENCE ── */
+#experience { background: var(--section-main); }
+.timeline { position: relative; padding-left: 2.5rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 8px; top: 8px; bottom: 0;
+  width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.timeline-item { position: relative; margin-bottom: 3rem; }
+.timeline-dot {
+  position: absolute; left: -2.5rem; top: 6px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--card-bg); border: 2px solid var(--gold);
+  transition: background 0.35s;
+}
+.timeline-dot.active { background: var(--gold); }
+.timeline-period { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.timeline-role { font-family: 'EB Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--navy); transition: color 0.35s; }
+.timeline-institution { font-size: 0.93rem; color: var(--text-mid); margin-bottom: 1rem; transition: color 0.35s; }
+.timeline-desc { color: var(--text-mid); font-size: 0.91rem; transition: color 0.35s; }
+.achievement-list { list-style: none; margin-top: 0.75rem; }
+.achievement-list li { padding: 0.35rem 0 0.35rem 1.5rem; position: relative; font-size: 0.88rem; color: var(--text-mid); transition: color 0.35s; }
+.achievement-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.85rem; }
+.badge-current {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #e8f5ee; color: #1a6b3a;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
+  padding: 0.2rem 0.7rem; border-radius: 100px; margin-left: 0.75rem;
+}
+.badge-current::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #1a6b3a; animation: blink 1.5s ease-in-out infinite; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+[data-theme="dark"] .badge-current { background: #0d2b1a; color: #4caf82; }
+
+/* ── PUBLICATIONS ── */
+#publications { background: var(--section-alt); }
+.research-interests { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem; }
+.research-tag {
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 100px; font-size: 0.8rem; color: var(--navy);
+  background: var(--card-bg); font-weight: 500;
+  transition: all 0.2s, background 0.35s, border-color 0.35s;
+}
+.research-tag:hover { border-color: var(--gold); background: var(--accent-bg); }
+.pub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+.pub-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1.5rem 1.75rem;
+  transition: box-shadow 0.25s, background 0.35s, border-color 0.35s, transform 0.25s;
+}
+.pub-card:hover { box-shadow: 0 6px 24px var(--shadow); transform: translateY(-2px); }
+.pub-type { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+.pub-title { font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.45; transition: color 0.35s; }
+.pub-authors { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem; font-style: italic; transition: color 0.35s; }
+.pub-venue { font-size: 0.82rem; color: var(--text-mid); transition: color 0.35s; }
+.pub-meta { display: flex; gap: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap; align-items: center; }
+.pub-tag { font-size: 0.68rem; font-weight: 500; padding: 0.2rem 0.6rem; background: var(--accent-bg); color: var(--navy-mid); border-radius: 4px; transition: background 0.35s; }
+.pub-tag.green { background: #e8f5ee; color: #1a5e32; }
+[data-theme="dark"] .pub-tag.green { background: #0d2b1a; color: #4caf82; }
+.pub-link { font-size: 0.78rem; color: var(--gold); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.patent-card {
+  background: linear-gradient(135deg, #0a1526, #152240);
+  border-radius: 8px; padding: 2rem 2.5rem;
+  display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 2rem; align-items: center;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(184,152,60,0.2);
+}
+.patent-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.5rem; }
+.patent-title { font-family: 'EB Garamond', serif; font-size: 1.35rem; color: white; margin-bottom: 0.5rem; }
+.patent-detail { font-size: 0.83rem; color: rgba(255,255,255,0.55); }
+.patent-seal {
+  width: 80px; height: 80px; border-radius: 50%;
+  border: 2px solid rgba(184,152,60,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'EB Garamond', serif; font-size: 0.58rem;
+  text-align: center; color: var(--gold-light); letter-spacing: 0.05em; flex-shrink: 0;
+}
+.conf-table { width: 100%; border-collapse: collapse; }
+.conf-table th { text-align: left; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 0 1rem 0.75rem; border-bottom: 1px solid var(--border); }
+.conf-table td { padding: 1rem; font-size: 0.87rem; color: var(--text-mid); border-bottom: 1px solid var(--border); vertical-align: top; transition: color 0.35s; }
+.conf-table tr:last-child td { border-bottom: none; }
+.conf-scope { display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 4px; }
+.conf-scope.intl { background: #e8eef8; color: #1a3a7a; }
+.conf-scope.natl { background: #fdf4e0; color: #7a5b10; }
+.conf-scope.state { background: #e8f5ee; color: #1a5e32; }
+[data-theme="dark"] .conf-scope.intl { background: #1a2a50; color: #8ab0ee; }
+[data-theme="dark"] .conf-scope.natl { background: #2a2010; color: #d4af55; }
+[data-theme="dark"] .conf-scope.state { background: #0d2b1a; color: #4caf82; }
+
+/* ── SKILLS ── */
+#skills { background: var(--section-main); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.skill-group { background: var(--section-alt); border-radius: 8px; padding: 1.5rem; border: 1px solid var(--border); transition: background 0.35s, border-color 0.35s; }
+.skill-group-title { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.skill-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip {
+  padding: 0.3rem 0.8rem; border-radius: 100px;
+  font-size: 0.78rem; font-weight: 500;
+  background: var(--card-bg); color: var(--text-mid);
+  border: 1px solid var(--border);
+  transition: all 0.2s, background 0.35s;
+}
+.chip:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── ACHIEVEMENTS ── */
+#achievements { background: var(--section-alt); }
+.ach-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+.ach-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 1.5rem;
+  transition: box-shadow 0.25s, transform 0.25s, background 0.35s, border-color 0.35s;
+}
+.ach-card:hover { box-shadow: 0 6px 24px var(--shadow); transform: translateY(-3px); }
+.ach-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+.ach-card h4 { font-family: 'EB Garamond', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.35rem; transition: color 0.35s; }
+.ach-card p { font-size: 0.82rem; color: var(--text-muted); transition: color 0.35s; }
+
+/* ── LEADERSHIP ── */
+#leadership { background: var(--section-main); }
+.leadership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.role-card {
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 2rem; position: relative; overflow: hidden;
+  background: var(--card-bg); transition: background 0.35s, border-color 0.35s, box-shadow 0.25s, transform 0.25s;
+}
+.role-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+.role-card:hover { box-shadow: 0 6px 24px var(--shadow); transform: translateY(-2px); }
+.role-title { font-family: 'EB Garamond', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.3rem; transition: color 0.35s; }
+.role-institution { font-size: 0.85rem; color: var(--gold); margin-bottom: 1rem; font-weight: 500; }
+.role-desc { font-size: 0.87rem; color: var(--text-mid); transition: color 0.35s; }
+.role-since { font-size: 0.78rem; color: var(--text-muted); margin-top: 1rem; }
+
+/* ── TEACHING ── */
+#teaching { background: var(--section-alt); }
+.teaching-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.subjects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 0.65rem; margin-top: 1rem; }
+.subject-chip {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.7rem 1rem;
+  font-size: 0.84rem; color: var(--text-mid);
+  display: flex; align-items: center; gap: 8px;
+  transition: all 0.2s, background 0.35s;
+}
+.subject-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+.subject-chip:hover { border-color: var(--gold); transform: translateX(3px); }
+.fdp-list { margin-top: 1.5rem; }
+.fdp-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.85rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; transition: border-color 0.35s; }
+.fdp-item:last-child { border-bottom: none; }
+.fdp-date { font-size: 0.7rem; font-weight: 600; color: var(--gold); min-width: 90px; letter-spacing: 0.04em; margin-top: 3px; }
+.fdp-title { color: var(--text-mid); transition: color 0.35s; }
+.fdp-org { color: var(--text-muted); font-size: 0.76rem; margin-top: 3px; transition: color 0.35s; }
+
+/* ── CONTACT ── */
+#contact {
+  background: linear-gradient(135deg, #060d1e 0%, #0e1a35 60%, #111e3a 100%);
+  color: white;
+}
+[data-theme="dark"] #contact { background: linear-gradient(135deg, #020508 0%, #070e1e 60%, #090d1f 100%); }
+#contact .section-label { color: var(--gold-light); }
+#contact .section-label::before { background: var(--gold-light); }
+#contact .section-heading { color: white; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+.contact-lead { color: rgba(255,255,255,0.55); margin-bottom: 2.5rem; font-size: 0.95rem; line-height: 1.85; }
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: rgba(184,152,60,0.12);
+  border: 1px solid rgba(184,152,60,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.contact-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 3px; }
+.contact-value { font-size: 0.93rem; color: rgba(255,255,255,0.8); }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.form-group input, .form-group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px; padding: 0.75rem 1rem;
+  color: white; font-size: 0.9rem; font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+  resize: vertical;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: rgba(184,152,60,0.55); background: rgba(255,255,255,0.07); }
+.form-group textarea { min-height: 120px; }
+.form-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-top: 0.5rem; }
+.btn-send {
+  padding: 0.85rem 2.5rem; background: var(--gold);
+  color: #0e1a35; font-weight: 700; font-size: 0.85rem;
+  letter-spacing: 0.06em; border: none; border-radius: 4px;
+  cursor: pointer; transition: background 0.2s, transform 0.15s;
+}
+.btn-send:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-cv-contact {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid rgba(184,152,60,0.4);
+  background: rgba(184,152,60,0.08);
+  color: var(--gold-light); font-size: 0.85rem; font-weight: 500;
+  border-radius: 4px; letter-spacing: 0.04em;
+  transition: all 0.2s; cursor: pointer;
+}
+.btn-cv-contact:hover { background: rgba(184,152,60,0.18); }
+
+/* ── FOOTER ── */
+footer {
+  background: #020508;
+  padding: 2rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-left { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+.footer-brand { color: var(--gold-light); font-style: italic; font-family: 'EB Garamond', serif; font-size: 1rem; }
+.footer-right { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+/* ── BACK TO TOP ── */
+#back-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 80;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--gold); color: #0e1a35;
+  border: none; cursor: pointer; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 16px rgba(184,152,60,0.4);
+}
+#back-top.visible { opacity: 1; visibility: visible; }
+#back-top:hover { background: var(--gold-light); transform: translateY(-3px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,15,30,0.99); flex-direction: column; padding: 1.5rem; gap: 1rem; border-top: 1px solid rgba(184,152,60,0.2); }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+  section { padding: 4rem 1.5rem; }
+  #hero { padding: 100px 1.5rem 3rem; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-avatar { display: none; }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  .about-grid, .contact-grid, .edu-grid, .pub-grid, .leadership-grid, .teaching-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ach-grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .patent-card { grid-template-columns: 1fr; }
+  .conf-table thead { display: none; }
+  .conf-table td { display: block; padding: 0.4rem 0; border: none; }
+  .conf-table tr { padding: 1rem 0; border-bottom: 1px solid var(--border); display: block; }
+  footer { padding: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .ach-grid { grid-template-columns: 1fr; }
+  .about-highlights { grid-template-columns: 1fr; }
+  .hero-cta { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-monogram">APM</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <div class="loader-text">Loading Academic Portfolio</div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-brand">Dr. M. Anita Priscilla Mary</div>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Research</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">☀️</button>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid container">
+    <div>
+      <div class="hero-eyebrow">Academic Portfolio · Chennai, India</div>
+      <h1>Dr. M. Anita Priscilla Mary</h1>
+      <p class="hero-title-line">Associate Dean (Science) &nbsp;·&nbsp; Head-in-Charge &nbsp;·&nbsp; Assistant Professor<br>Department of Computer Science<br>Anna Adarsh College for Women (Autonomous) — NAAC A++</p>
+      <div class="hero-tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Data Mining</span>
+        <span class="tag">Energy Prediction</span>
+        <span class="tag">Computer Applications</span>
+        <span class="tag">Artificial Intelligence</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <a href="#publications" class="btn-outline">View Publications</a>
+        <button class="btn-cv" onclick="window.print()" aria-label="Download CV">
+          ⬇ Download CV
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">17+</div>
+          <div class="hero-stat-label">Years Teaching</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Publications</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-label">Conferences</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">1</div>
+          <div class="hero-stat-label">Patent</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-avatar">
+  <img src="profile.jpeg" alt="Dr. M. Anita Priscilla Mary">
+</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <h2 class="section-heading">A Dedicated Educator &amp; Researcher</h2>
+        <p>Dr. M. Anita Priscilla Mary is a distinguished academic with over seventeen years of teaching and research experience in Computer Science. Currently serving as Associate Dean (Science), Head-in-Charge, and Assistant Professor at Anna Adarsh College for Women (Autonomous), Chennai — an institution re-accredited by NAAC with an A++ Grade — she exemplifies academic leadership grounded in scholarly rigour.</p>
+        <p>Her research spans machine learning, data mining, and electrical energy forecasting. She has authored peer-reviewed publications in Scopus and Springer-indexed outlets, presented at international conferences, and secured a Government of India patent for an IoT-based health monitoring innovation.</p>
+        <p>Beyond scholarship, Dr. Anita Priscilla Mary brings a rare depth of institutional commitment — guiding curriculum development, mentoring students, and contributing to the governance of her department and college as both an administrative and academic leader.</p>
+        <div class="about-highlights">
+          <div class="highlight-card"><div class="label">Current Role</div><div class="value">Associate Dean &amp; HoD-in-Charge</div></div>
+          <div class="highlight-card"><div class="label">Institution</div><div class="value">Anna Adarsh College for Women (Autonomous)</div></div>
+          <div class="highlight-card"><div class="label">Doctoral Institute</div><div class="value">Dr. MGR Educational &amp; Research Institute</div></div>
+          <div class="highlight-card"><div class="label">Ph.D. Awarded</div><div class="value">2022</div></div>
+        </div>
+      </div>
+      <div class="about-sidebar">
+        <div class="info-block">
+          <h4>Contact</h4>
+          <div class="info-item"><span class="info-dot"></span><span>anitapriscilla80@gmail.com</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>+91 98413 00772</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>Chennai, Tamil Nadu</span></div>
+        </div>
+        <div class="info-block">
+          <h4>Qualifications</h4>
+          <div class="info-item"><span class="info-dot"></span><span>Ph.D. – Computer Science (2022)</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>SLET – Mother Teresa University (2018)</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>M.Phil. – Computer Science (2009)</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>MCA – 77.22%, First Class (2003)</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>B.Sc. Computer Science – 66.24% (2000)</span></div>
+        </div>
+        <div class="info-block">
+          <h4>Research Interests</h4>
+          <div class="info-item"><span class="info-dot"></span><span>Machine Learning &amp; Neural Networks</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>Data Mining &amp; Classification</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>Energy Resource Prediction</span></div>
+          <div class="info-item"><span class="info-dot"></span><span>Cyber Security &amp; AI Safety</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Education</div>
+    <h2 class="section-heading fade-in">Academic Credentials</h2>
+    <div class="edu-grid fade-in">
+      <div class="edu-card highlight">
+        <div class="edu-badge gold">Doctoral Degree</div>
+        <div class="edu-degree">Ph.D. in Computer Science</div>
+        <div class="edu-institution">Dr. MGR Educational and Research Institute, Maduravoyal, Chennai</div>
+        <div class="edu-meta"><span>📅 Awarded 2022</span></div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-badge">State-Level Eligibility</div>
+        <div class="edu-degree">SLET</div>
+        <div class="edu-institution">Mother Teresa University</div>
+        <div class="edu-meta"><span>📅 2018</span></div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-badge">Post-Graduate Research</div>
+        <div class="edu-degree">M.Phil. in Computer Science</div>
+        <div class="edu-institution">Vinayaka Mission University, Salem</div>
+        <div class="edu-meta"><span>📅 2009</span><span>Second Class</span></div>
+      </div>
+      <div class="edu-card highlight">
+        <div class="edu-badge gold">Post-Graduate</div>
+        <div class="edu-degree">MCA – Master of Computer Applications</div>
+        <div class="edu-institution">Guru Shree Shantivijai Jain College for Women, Chennai · University of Madras</div>
+        <div class="edu-meta"><span>📅 2003</span><span>77.22% · First Class</span></div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-badge">Under-Graduate</div>
+        <div class="edu-degree">B.Sc. Computer Science</div>
+        <div class="edu-institution">Bhaktavatsalam Memorial College for Women, Korattur, Chennai · University of Madras</div>
+        <div class="edu-meta"><span>📅 2000</span><span>66.24% · First Class</span></div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-badge">Higher Secondary</div>
+        <div class="edu-degree">HSC</div>
+        <div class="edu-institution">Fathima Matriculation Higher Secondary School, Kodambakkam, Chennai</div>
+        <div class="edu-meta"><span>📅 1997</span><span>66.16% · First Class</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Experience</div>
+    <h2 class="section-heading fade-in">Professional Journey</h2>
+    <div class="timeline fade-in">
+      <div class="timeline-item">
+        <div class="timeline-dot active"></div>
+        <div class="timeline-period">July 2010 – Present &nbsp;<span class="badge-current">Current</span></div>
+        <div class="timeline-role">Associate Dean (Science) · Head-in-Charge · Assistant Professor</div>
+        <div class="timeline-institution">Anna Adarsh College for Women (Autonomous), Dept. of Computer Science – Shift II, Anna Nagar, Chennai</div>
+        <ul class="achievement-list">
+          <li>Appointed Associate Dean (Science) effective 12 November 2025, overseeing academic and administrative coordination across the science faculty at an A++ NAAC-accredited institution.</li>
+          <li>Elevated to Head-in-Charge, Department of Computer Science (Shift II) effective 01 May 2026, providing departmental leadership in scheduling, faculty coordination, and student welfare.</li>
+          <li>Delivers instruction across core Computer Science disciplines at undergraduate and post-graduate levels, contributing to curriculum design and pedagogical innovation.</li>
+          <li>Spearheaded student research mentoring, workshop organisation, and interdisciplinary academic initiatives over a tenure exceeding 15 years.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">July 2005 – March 2006</div>
+        <div class="timeline-role">Lecturer</div>
+        <div class="timeline-institution">Anna Adarsh College for Women, Chennai – Department of Computer Science, Shift I</div>
+        <div class="timeline-desc">Delivered undergraduate Computer Science instruction during an initial appointment of eight months at the same institution, establishing early mastery in academic pedagogy.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-period">August 2003 – March 2005</div>
+        <div class="timeline-role">Lecturer</div>
+        <div class="timeline-institution">Chennai National College, Avadi, Chennai</div>
+        <div class="timeline-desc">Provided foundational academic instruction in Computer Science for a period of one year and seven months, building early-career teaching competencies in a diverse student environment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS & RESEARCH -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label">Research</div>
+    <h2 class="section-heading fade-in">Publications &amp; Research Output</h2>
+    <div class="research-interests fade-in">
+      <span class="research-tag">Machine Learning</span>
+      <span class="research-tag">Data Mining</span>
+      <span class="research-tag">Energy Forecasting</span>
+      <span class="research-tag">K-Means Clustering</span>
+      <span class="research-tag">Multilayer Perceptron</span>
+      <span class="research-tag">Classification Algorithms</span>
+      <span class="research-tag">Electrical Resource Optimisation</span>
+    </div>
+
+    <!-- Patent -->
+    <div class="patent-card fade-in">
+      <div>
+        <div class="patent-label">Government of India Patent</div>
+        <div class="patent-title">Smart Measurable Temperature Monitoring Device with Social Distance</div>
+        <div class="patent-detail">Official Journal of The Patent Office, Government of India &nbsp;·&nbsp; Published 01 January 2021</div>
+      </div>
+      <div class="patent-seal">PATENT<br>GRANTED<br>GOI</div>
+    </div>
+
+    <!-- Journal Publications -->
+    <h3 style="font-family:'EB Garamond',serif; font-size:1.4rem; color:var(--navy); margin-bottom:1.25rem; font-weight:500; transition: color 0.35s;">Journal Publications</h3>
+    <div class="pub-grid fade-in">
+      <div class="pub-card">
+        <div class="pub-type">Scopus Indexed · 2021</div>
+        <div class="pub-title">Classifying Future Scope in Energy Resources and Predicting Power Demand using Multilayer Perceptron</div>
+        <div class="pub-authors">M. Anita Priscilla Mary, Dr. M.S. Josephine, Dr. V. Jeyabalaraja, Dr. S. Nirmala Sugirtha Rajini</div>
+        <div class="pub-venue">Turkish Journal of Computer and Mathematics Education</div>
+        <div class="pub-meta">
+          <span class="pub-tag">IF: 0.143</span>
+          <a class="pub-link" href="https://www.proquest.com/openview/487232d9708668661a3438bdf0ed7c62/1?pq-origsite=gscholar&cbl=2045096" target="_blank" rel="noopener">View →</a>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-type">Scopus Indexed · 2020</div>
+        <div class="pub-title">Identification and Performance Evaluation for Effective Utilization of Electrical Resource using K-Means Clustering Algorithm</div>
+        <div class="pub-authors">M. Anita Priscilla Mary, Dr. M.S. Josephine, Dr. V. Jeyabalaraja, Dr. S. Nirmala Sugirtha Rajini</div>
+        <div class="pub-venue">International Journal of Advanced Science and Technology</div>
+        <div class="pub-meta">
+          <span class="pub-tag">IF: 6.78</span>
+          <a class="pub-link" href="https://www.mdpi.com/1996-1073/12/12/2451" target="_blank" rel="noopener">View →</a>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-type">Springer · 2020 · 9 Citations</div>
+        <div class="pub-title">A Comparative Study and Analysis of Classification Methodologies in Data Mining for Energy Resources</div>
+        <div class="pub-authors">M. Anita Priscilla Mary, Dr. M.S. Josephine, Dr. V. Jeyabalaraja, Dr. S. Nirmala Sugirtha Rajini</div>
+        <div class="pub-venue">Intelligent Computing and Innovation on Data Science — Springer</div>
+        <div class="pub-meta">
+          <span class="pub-tag green">9 Citations</span>
+          <a class="pub-link" href="https://link.springer.com/chapter/10.1007/978-981-15-3284-9_25" target="_blank" rel="noopener">View →</a>
+        </div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-type">Indexed Journal · 2018</div>
+        <div class="pub-title">Analysis and Forecasting of Electrical Energy – A Literature Review</div>
+        <div class="pub-authors">M. Anita Priscilla Mary, Dr. M.S. Josephine, Dr. V. Jeyabalaraja, Dr. S. Nirmala Sugirtha Rajini</div>
+        <div class="pub-venue">International Journal of Pure and Applied Mathematics</div>
+        <div class="pub-meta">
+          <span class="pub-tag">IF: 0.296</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conference Presentations -->
+    <h3 style="font-family:'EB Garamond',serif; font-size:1.4rem; color:var(--navy); margin: 2.5rem 0 1.25rem; font-weight:500; transition: color 0.35s;">Conference Presentations</h3>
+    <div style="background:var(--card-bg); border:1px solid var(--border); border-radius:8px; overflow:hidden; transition: background 0.35s, border-color 0.35s;" class="fade-in">
+      <table class="conf-table">
+        <thead>
+          <tr>
+            <th>Paper Title</th>
+            <th>Conference</th>
+            <th>Level</th>
+            <th>Organiser &amp; Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Enhancing Awareness of Cyber Security in E-Learning</strong><br><small style="color:var(--text-muted)">ISBN 978-93-49818-91-0</small></td>
+            <td>NextGen Computing and Future Technologies (NCNFT 25)</td>
+            <td><span class="conf-scope natl">National</span></td>
+            <td>VELS Institute, Chennai · Oct 2025</td>
+          </tr>
+          <tr>
+            <td><strong>Leveraging ML &amp; AI to Foresee Social Media Hazards</strong><br><small style="color:var(--text-muted)">ISBN 978-93-94412-34-7</small></td>
+            <td>Cyber &amp; Information Security (ICCIS-3.0)</td>
+            <td><span class="conf-scope intl">International</span></td>
+            <td>DDGD Vaishnav College · Sep 2025</td>
+          </tr>
+          <tr>
+            <td><strong>Technological Revolution of Quantum Computing and Its Applications</strong><br><small style="color:var(--text-muted)">ISBN 978-93-342-2017-9</small></td>
+            <td>Applied Sciences, Technology &amp; Mathematics</td>
+            <td><span class="conf-scope intl">International</span></td>
+            <td>Shri Krishnaswamy College, Chennai · Feb 2025</td>
+          </tr>
+          <tr>
+            <td><strong>Digitalization &amp; Its Influence on Employee Psychological Well-Being</strong></td>
+            <td>Mental Health in the Era of AI</td>
+            <td><span class="conf-scope state">State</span></td>
+            <td>Anna Adarsh College for Women · Mar 2026</td>
+          </tr>
+          <tr>
+            <td><strong>Analysis of Tools and Applications in Data Mining</strong><br><small style="color:var(--text-muted)">ISBN 978-81-935192-0-2</small></td>
+            <td>Recent Trends in Computer Science</td>
+            <td><span class="conf-scope natl">National</span></td>
+            <td>K.C.S. Kasi Nadar College · Sep 2017</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-heading fade-in">Skills &amp; Competencies</h2>
+    <div class="skills-grid fade-in">
+      <div class="skill-group">
+        <div class="skill-group-title">Research &amp; Analytics</div>
+        <div class="skill-chips">
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Data Mining</span>
+          <span class="chip">K-Means Clustering</span>
+          <span class="chip">Multilayer Perceptron</span>
+          <span class="chip">Classification Methods</span>
+          <span class="chip">Energy Forecasting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Academic &amp; Teaching</div>
+        <div class="skill-chips">
+          <span class="chip">Curriculum Design</span>
+          <span class="chip">Student Mentoring</span>
+          <span class="chip">Lab Coordination</span>
+          <span class="chip">Research Supervision</span>
+          <span class="chip">Academic Leadership</span>
+          <span class="chip">Workshop Facilitation</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Technology &amp; Tools</div>
+        <div class="skill-chips">
+          <span class="chip">Computer Applications</span>
+          <span class="chip">R Programming</span>
+          <span class="chip">Python (AI/ML)</span>
+          <span class="chip">Database Systems</span>
+          <span class="chip">Cyber Security</span>
+          <span class="chip">Quantum Computing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Administration &amp; Leadership</div>
+        <div class="skill-chips">
+          <span class="chip">Departmental Governance</span>
+          <span class="chip">Dean-Level Administration</span>
+          <span class="chip">Institutional Coordination</span>
+          <span class="chip">Committee Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <div class="section-label">Achievements</div>
+    <h2 class="section-heading fade-in">Honours &amp; Recognitions</h2>
+    <div class="ach-grid fade-in">
+      <div class="ach-card">
+        <div class="ach-icon">🎓</div>
+        <h4>Ph.D. Conferred</h4>
+        <p>Doctor of Philosophy in Computer Science, Dr. MGR Educational and Research Institute, 2022</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">🏛️</div>
+        <h4>Associate Dean Appointment</h4>
+        <p>Appointed Associate Dean (Science), Anna Adarsh College for Women (Autonomous), effective November 2025</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">📋</div>
+        <h4>Head-in-Charge Designation</h4>
+        <p>Elevated to Head-in-Charge, Dept. of Computer Science (Shift II), effective May 2026</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">🔬</div>
+        <h4>Government of India Patent</h4>
+        <p>Patent granted for Smart Measurable Temperature Monitoring Device with Social Distance, January 2021</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">📰</div>
+        <h4>Springer Book Chapter</h4>
+        <p>Chapter published in Springer's Intelligent Computing series, garnering 9 scholarly citations</p>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">✅</div>
+        <h4>SLET Qualified</h4>
+        <p>Successfully cleared the State-Level Eligibility Test (SLET) through Mother Teresa University, 2018</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="container">
+    <div class="section-label">Leadership</div>
+    <h2 class="section-heading fade-in">Administrative Roles</h2>
+    <div class="leadership-grid fade-in">
+      <div class="role-card">
+        <div class="role-title">Associate Dean (Science)</div>
+        <div class="role-institution">Anna Adarsh College for Women (Autonomous) — NAAC A++</div>
+        <p class="role-desc">Coordinates academic governance across all science departments, liaising with the Principal and Heads of Departments to uphold institutional standards of excellence. Works in alignment with the Dean (Science) while maintaining impartial institutional oversight.</p>
+        <div class="role-since">Since 12 November 2025 · (Ref. 1051/PA/GS/AACW/2025)</div>
+      </div>
+      <div class="role-card">
+        <div class="role-title">Head-in-Charge, Computer Science (Shift II)</div>
+        <div class="role-institution">Anna Adarsh College for Women (Autonomous)</div>
+        <p class="role-desc">Oversees all departmental operations including academic scheduling, faculty coordination, student welfare, and compliance with institutional and university mandates for the Computer Science Shift II wing.</p>
+        <div class="role-since">Since 01 May 2026 · (Ref. No. 1204/PA/GS/AACW/2026)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING & PROFESSIONAL DEVELOPMENT -->
+<section id="teaching">
+  <div class="container">
+    <div class="section-label">Teaching &amp; Development</div>
+    <h2 class="section-heading fade-in">Pedagogy &amp; Professional Growth</h2>
+    <div class="teaching-inner fade-in">
+      <div>
+        <h3 style="font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); margin-bottom:1rem; font-weight:500; transition: color 0.35s;">Subjects of Expertise</h3>
+        <div class="subjects-grid">
+          <div class="subject-chip">Computer Applications</div>
+          <div class="subject-chip">Data Mining</div>
+          <div class="subject-chip">Machine Learning</div>
+          <div class="subject-chip">Artificial Intelligence</div>
+          <div class="subject-chip">Database Systems</div>
+          <div class="subject-chip">Cyber Security</div>
+          <div class="subject-chip">R Programming</div>
+          <div class="subject-chip">Quantum Computing</div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); margin-bottom:1rem; font-weight:500; transition: color 0.35s;">Faculty Development &amp; Workshops</h3>
+        <div class="fdp-list">
+          <div class="fdp-item">
+            <div class="fdp-date">Sep 2025</div>
+            <div>
+              <div class="fdp-title">Innovative Teaching and Research with R Programming: A Global Perspective</div>
+              <div class="fdp-org">Anna Adarsh College for Women</div>
+            </div>
+          </div>
+          <div class="fdp-item">
+            <div class="fdp-date">Sep–Oct 2025</div>
+            <div>
+              <div class="fdp-title">Secure Code, Safe Future – Cyber Security (International Online FDP)</div>
+              <div class="fdp-org">Valliammal College for Women, Chennai</div>
+            </div>
+          </div>
+          <div class="fdp-item">
+            <div class="fdp-date">Oct 2025</div>
+            <div>
+              <div class="fdp-title">Recent Trends in Artificial Intelligence – Digital Era (National FDP)</div>
+              <div class="fdp-org">SRM Institute of Science &amp; Technology, Ramapuram</div>
+            </div>
+          </div>
+          <div class="fdp-item">
+            <div class="fdp-date">Feb 2026</div>
+            <div>
+              <div class="fdp-title">Essentials of Effective Mentoring (Workshop)</div>
+              <div class="fdp-org">Anna Adarsh College for Women</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2 class="section-heading fade-in">Get in Touch</h2>
+    <div class="contact-grid fade-in">
+      <div>
+        <p class="contact-lead">For academic collaborations, research partnerships, faculty enquiries, or institutional outreach, please reach out through any of the channels below or via the contact form.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">anitapriscilla80@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Mobile</div>
+              <div class="contact-value">+91 98413 00772</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🏛</div>
+            <div>
+              <div class="contact-label">Institution</div>
+              <div class="contact-value">Anna Adarsh College for Women (Autonomous)<br>Anna Nagar, Chennai – 600 040</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Residence</div>
+              <div class="contact-value">Akshya Apartments, B1, 2nd Floor, Trustpuram 5th Cross Street, Kodambakkam, Chennai – 600 024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Purpose of enquiry" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Your message..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn-send" onclick="alert('Thank you for your message. Dr. Anita Priscilla Mary will respond shortly.')">Send Message</button>
+            <button class="btn-cv-contact" onclick="window.print()">⬇ Download CV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <span class="footer-brand">Dr. M. Anita Priscilla Mary</span><br>
+    Associate Dean (Science) &amp; Head-in-Charge, Dept. of Computer Science<br>
+    Anna Adarsh College for Women (Autonomous), Chennai
+  </div>
+  <div class="footer-right">© 2026 · All Rights Reserved · Academic Portfolio</div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── LOADER ── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+    document.body.style.overflow = '';
+  }, 1800);
+});
+document.body.style.overflow = 'hidden';
+
+/* ── DARK / LIGHT MODE ── */
+const html = document.documentElement;
+const toggle = document.getElementById('themeToggle');
+let dark = false;
+toggle.addEventListener('click', () => {
+  dark = !dark;
+  html.setAttribute('data-theme', dark ? 'dark' : 'light');
+  toggle.textContent = dark ? '🌙' : '☀️';
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+});
+// Restore saved preference
+const saved = localStorage.getItem('theme');
+if (saved === 'dark') { dark = true; html.setAttribute('data-theme','dark'); toggle.textContent = '🌙'; }
+
+/* ── ACTIVE NAV ON SCROLL ── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + e.target.id) a.classList.add('active');
+      });
+    }
+  });
+}, { threshold: 0.35, rootMargin: '-64px 0px 0px 0px' });
+sections.forEach(s => observer.observe(s));
+
+/* ── FADE IN ON SCROLL ── */
+const fadeObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => fadeObs.observe(el));
+
+/* ── BACK TO TOP ── */
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('visible', window.scrollY > 500);
+});
+
+/* ── CLOSE MOBILE NAV ON LINK CLICK ── */
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>
